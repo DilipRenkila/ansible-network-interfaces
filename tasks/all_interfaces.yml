@@ -8,5 +8,4 @@
   template:
     src: all_interfaces.j2
     dest: "{{ network_all_interfaces_path }}"
-  notify:
-  - network all interfaces changed
+ 
