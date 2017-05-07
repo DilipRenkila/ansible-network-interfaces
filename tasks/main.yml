@@ -26,6 +26,11 @@
 
 - include: all_interfaces.yml
   when: network_interfaces
+  
+- include: manage_devices.yml
+  when:
+  - network_manage_devices
+  - network_interfaces  
 
 - name: configurations
   template:
@@ -37,8 +42,3 @@
   notify:
   - network restart interface service
   - network restart interface command
-
-- include: manage_devices.yml
-  when:
-  - network_manage_devices
-  - network_interfaces
