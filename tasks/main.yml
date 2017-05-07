@@ -40,5 +40,4 @@
   - "{{ network_interfaces | default([]) | groupby('device') }}"
   register: network_configuration_result
   notify:
-  - network restart interface service
-  - network restart interface command
+  - Restart server
