@@ -34,3 +34,9 @@
   with_items: "{{ network_configuration_result.results | default([]) }}"
   tags:
   - skip_ansible_lint
+ 
+ - name: Restart server
+   command: shutdown -r now "Reboot triggered by Ansible"
+   async: 0
+   poll: 0
+   ignore_errors: true
